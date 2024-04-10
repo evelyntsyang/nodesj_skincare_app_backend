@@ -1,13 +1,16 @@
 const express = require("express");
 const { MongoClient } = require("mongodb");
 const cors = require("cors");
+require('dotenv').config()
 
 const app = express();
 const port = 5000;
+const MONGOURI = process.env.MONGO_URI
+
+console.log(process.env.MONGO_URI)
 
 // Connection URI
-const uri =
-  "mongodb+srv://evelyn2:G4DfrCQTB3BjV8WzRBVD@cluster0.m69rxzs.mongodb.net/";
+const uri = MONGOURI;
 
 // Database Name
 const dbName = "skincare";
